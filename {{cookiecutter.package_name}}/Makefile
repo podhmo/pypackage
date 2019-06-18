@@ -5,6 +5,10 @@ format:
 #	pip install -e .[dev]
 	black {{cookiecutter.directory_name}} setup.py
 
+lint:
+#	pip install -e .[dev]
+	flake8 {{cookiecutter.directory_name}} --ignore W503,E203,E501
+
 build:
 #	pip install wheel
 	python setup.py bdist_wheel
@@ -14,4 +18,4 @@ upload:
 	twine check dist/{{cookiecutter.package_name}}-$(shell cat VERSION)*
 	twine upload dist/{{cookiecutter.package_name}}-$(shell cat VERSION)*
 
-.PHONY: test format build upload
+.PHONY: test format lint build upload
