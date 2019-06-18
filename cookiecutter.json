@@ -3,15 +3,14 @@
     "kamidana.additionals.naming"
   ],
   "_copy_without_render": [
-    ".gitignore",
-    "CHANGES.md",
-    "setup.cfg"
+    ".gitignore"
   ],
   "_extensions": [
     "kamidana.extensions.CookiecutterAdditionalModulesExtension"
   ],
   "name": "sample",
   "user_name": "podhmo",
+  "email": "ababjam61+github@gmail.com",
   "description": "-",
   "directory_name": "{{cookiecutter.name|snakecase}}",
   "package_name": "{{cookiecutter.name|kebabcase}}",
