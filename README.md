@@ -9,7 +9,7 @@ $ pip install kamidana cookiecutter
 generate project from this project template.
 
 ```console
-$ cookiecutter --no-input gh:podhmo/pypackage name=foo
+$ cookiecutter --no-input . name=foo
 
 $ tree foo
 foo

@@ -9,7 +9,7 @@ $ pip install kamidana cookiecutter
 generate project from this project template.
 
 ```console
-{%- with cmd="cookiecutter --no-input gh:podhmo/pypackage name=%s"|format(name) %}
+{%- with cmd="cookiecutter --no-input %s name=%s"|format(pkg, name) %}
 $ {{cmd}}
 {{cmd|read_from_command(relative_self=False)}}
 {%- endwith %}
