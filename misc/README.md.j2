@@ -1,0 +1,20 @@
+# pypackage
+
+setup
+
+```console
+$ pip install kamidana cookiecutter
+```
+
+generate project from this project template.
+
+```console
+{%- with cmd="cookiecutter --no-input gh:podhmo/pypackage name=%s"|format(name) %}
+$ {{cmd}}
+{{cmd|read_from_command(relative_self=False)}}
+{%- endwith %}
+{%- with cmd="tree %s"|format(name) %}
+$ {{cmd}}
+{{cmd|read_from_command(relative_self=False)}}
+{%- endwith %}
+```
