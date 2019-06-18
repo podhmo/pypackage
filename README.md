@@ -9,19 +9,20 @@ $ pip install kamidana cookiecutter
 generate project from this project template.
 
 ```console
-$ cookiecutter --no-input . name=foo
+$ cookiecutter --no-input gh:podhmo/pypackage name=foo
 
 $ tree foo
 foo
-├── CHANGES.md
 ├── foo
 │   ├── __init__.py
 │   └── tests
 │       └── __init__.py
+├── Makefile
 ├── README.md
 ├── setup.cfg
-└── setup.py
+├── setup.py
+└── VERSION
 
-2 directories, 6 files
+2 directories, 7 files
 
 ```
