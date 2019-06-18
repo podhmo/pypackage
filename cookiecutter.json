@@ -11,6 +11,7 @@
     "kamidana.extensions.CookiecutterAdditionalModulesExtension"
   ],
   "name": "sample",
+  "user_name": "podhmo",
   "description": "-",
   "directory_name": "{{cookiecutter.name|snakecase}}",
   "package_name": "{{cookiecutter.name|kebabcase}}",
