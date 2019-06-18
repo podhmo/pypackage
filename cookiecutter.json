@@ -1,0 +1,18 @@
+{
+  "_additional_modules": [
+    "kamidana.additionals.naming"
+  ],
+  "_copy_without_render": [
+    ".gitignore",
+    "CHANGES.md",
+    "setup.cfg"
+  ],
+  "_extensions": [
+    "kamidana.extensions.CookiecutterAdditionalModulesExtension"
+  ],
+  "name": "sample",
+  "description": "-",
+  "directory_name": "{{cookiecutter.name|snakecase}}",
+  "package_name": "{{cookiecutter.name|kebabcase}}",
+  "version": "0.0.0"
+}
