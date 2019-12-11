@@ -2,7 +2,7 @@ test:
 	pytest -vv --show-capture=all
 
 ci:
-	pytest --show-capture=all --cov=metashape --no-cov-on-fail --cov-report term-missing
+	pytest --show-capture=all --cov={{cookiecutter.directory_name}} --no-cov-on-fail --cov-report term-missing
 	$(MAKE) lint typing
 
 format:
