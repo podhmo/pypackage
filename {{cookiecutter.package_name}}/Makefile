@@ -15,7 +15,7 @@ lint:
 
 typing:
 #	pip install -e .[dev]
-	mypy --strict --strict-equality --ignore-missing-imports metashape
+	mypy --strict --strict-equality --ignore-missing-imports {{cookiecutter.directory_name}}
 mypy: typing
 
 build:
