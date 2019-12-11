@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 
 install_requires = []
-dev_requires = ["black", "flake8"]
-tests_requires = []
+dev_requires = ["black", "flake8", "mypy"]
+tests_requires = ["pytest"]
 
 setup(
     classifiers=[
@@ -21,4 +21,8 @@ setup(
     extras_require={"testing": tests_requires, "dev": dev_requires},
     tests_require=tests_requires,
     test_suite="{{cookiecutter.directory_name}}.tests",
+#     entry_points="""
+#       [console_scripts]
+#       {{cookiecutter.package_name}} = {{cookiecutter.directory_name}}.cli:main
+# """,
 )

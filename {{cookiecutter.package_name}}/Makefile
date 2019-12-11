@@ -1,5 +1,9 @@
 test:
-	python setup.py test
+	pytest -vv --show-capture=all
+
+ci:
+	pytest --show-capture=all --cov=metashape --no-cov-on-fail --cov-report term-missing
+	$(MAKE) lint typing
 
 format:
 #	pip install -e .[dev]
@@ -8,6 +12,11 @@ format:
 lint:
 #	pip install -e .[dev]
 	flake8 {{cookiecutter.directory_name}} --ignore W503,E203,E501
+
+typing:
+#	pip install -e .[dev]
+	mypy --strict --strict-equality --ignore-missing-imports metashape
+mypy: typing
 
 build:
 #	pip install wheel
@@ -18,4 +27,4 @@ upload:
 	twine check dist/{{cookiecutter.package_name}}-$(shell cat VERSION)*
 	twine upload dist/{{cookiecutter.package_name}}-$(shell cat VERSION)*
 
-.PHONY: test format lint build upload
+.PHONY: test ci format lint typing mypy build upload
