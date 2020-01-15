@@ -9,6 +9,9 @@ format:
 #	pip install -e .[dev]
 	black {{cookiecutter.directory_name}} setup.py
 
+# https://www.flake8rules.com/rules/W503.html
+# https://www.flake8rules.com/rules/E203.html
+# https://www.flake8rules.com/rules/E501.html
 lint:
 #	pip install -e .[dev]
 	flake8 {{cookiecutter.directory_name}} --ignore W503,E203,E501
