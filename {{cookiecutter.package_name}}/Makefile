@@ -28,6 +28,7 @@ build:
 upload:
 #	pip install twine
 	twine check dist/{{cookiecutter.package_name}}-$(shell cat VERSION)*
-	twine upload dist/{{cookiecutter.package_name}}-$(shell cat VERSION)*
+	twine upload dist/{{cookiecutter.package_name}}-$(shell cat VERSION)*.tar.gz
+	twine upload dist/{{cookiecutter.package_name}}-$(shell cat VERSION)*.whl
 
 .PHONY: test ci format lint typing mypy build upload
