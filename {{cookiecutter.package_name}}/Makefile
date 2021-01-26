@@ -21,14 +21,19 @@ typing:
 	mypy --strict --strict-equality --ignore-missing-imports {{cookiecutter.directory_name}}
 mypy: typing
 
+#### for pypi ####################
+
+get-version:
+	python -c 'import {{cookiecutter.directory_name}} as m; print(m.__version__)'
+
 build:
 #	pip install wheel
 	python setup.py sdist bdist_wheel
 
 upload:
 #	pip install twine
-	twine check dist/{{cookiecutter.package_name}}-$(shell cat VERSION)*
-	twine upload dist/{{cookiecutter.package_name}}-$(shell cat VERSION)*.tar.gz
-	twine upload dist/{{cookiecutter.package_name}}-$(shell cat VERSION)*.whl
+	twine check dist/{{cookiecutter.package_name}}-$(shell make -s get-version)*
+	twine upload dist/{{cookiecutter.package_name}}-$(shell make -s get-version)*.tar.gz
+	twine upload dist/{{cookiecutter.package_name}}-$(shell make -s get-version)*.whl
 
 .PHONY: test ci format lint typing mypy build upload
